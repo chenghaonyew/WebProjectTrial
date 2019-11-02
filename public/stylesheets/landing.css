@@ -1,0 +1,89 @@
+body{
+	background-color: black;
+}
+
+#landing-header{
+	z-index:1;
+	position: relative;
+	text-align: center;
+	padding-top: 40vh;
+	/* vh: view height*/
+}
+
+#landing-header h1{
+	color: white;
+}
+
+/* z index
+	- the greater number of z-index will cover infront the lower-number of z-index
+*/
+.slideshow{
+	position:fixed;
+	width: 100%;
+	height:100%;
+	top:0;
+	left:0;
+	z-index:0;
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+.slideshow li{
+	position:absolute;
+	width: 100%;
+	height:100%;
+	top:0;
+	left:0;
+	/* allow image occupy all the page */
+	background-size:cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	opacity 0;
+	z-index:0;
+	/* let the image animation interval as 50s in linear(constant speed) with infinite loop */
+	animation: imageAnimation 50s linear infinite;
+}
+
+.slideshow li:nth-child(1){
+	background-image:url(https://i1.wp.com/visitmckenzieriver.com/oregon/wp-content/uploads/2015/06/paradise_campground.jpg?resize=640%2C420);
+}
+
+.slideshow li:nth-child(2){
+	background-image:url(http://www.nationalparks.nsw.gov.au/-/media/npws/images/parks/new-england-national-park/thungutti-campground/thunhgutti-campground-01.jpg);
+	animation-delay: 10s;
+}
+
+.slideshow li:nth-child(3){
+	background-image:url(https://assets.simpleviewinc.com/simpleview/image/fetch/c_fill,h_452,q_75,w_982/http://res.cloudinary.com/simpleview/image/upload/v1469218578/clients/lanecounty/constitution_grove_campground_by_natalie_inouye_417476ef-05c3-464d-99bd-032bb0ee0bd5.png);
+	animation-delay: 20s;
+}
+
+.slideshow li:nth-child(4){
+	background-image:url(https://img.hipcamp.com/images/c_limit,f_auto,h_1200,q_60,w_1920/v1440478008/campground-photos/csnhvxn0qcki2id5vxnc/crater-lake-mazama-campground.jpg);
+	animation-delay: 30s;
+}
+
+.slideshow li:nth-child(5){
+	background-image:url(https://www.elacampground.com/wp-content/uploads/2019/06/Ela-Campground-87.jpg);
+	animation-delay: 40s;
+}
+
+@keyframes imageAnimation{
+	0%{
+		opacity:0 ;
+		animation-timing-function: ease-in;
+	}
+	10%{
+		opacity:1 ;
+		animation-timing-function: ease-out;
+	}
+	20%{
+		opacity:1 ;
+	}
+	30%{
+		opacity:0 ;
+	}
+}
+
+
